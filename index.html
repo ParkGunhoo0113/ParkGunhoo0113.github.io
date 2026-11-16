@@ -17,8 +17,8 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #000;
-      color: #fff;
+      background: #ffffff;
+      color: #000000;
       line-height: 1.7;
     }
 
@@ -27,8 +27,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #000;
-      border-bottom: 1px solid #333;
+      background: #14213d;
+      color: #ffffff;
     }
 
     header strong {
@@ -36,20 +36,20 @@
     }
 
     nav a {
-      color: #fff;
+      color: #ffffff;
       text-decoration: none;
       margin-left: 20px;
     }
 
     nav a:hover {
-      color: #aaa;
+      color: #cccccc;
     }
 
     .hero {
       padding: 120px 8%;
       text-align: center;
-      background: #fff;
-      color: #000;
+      background: #ffffff;
+      color: #000000;
     }
 
     .hero h1 {
@@ -58,15 +58,17 @@
     }
 
     .hero span {
-      color: #000;
+      color: #000000;
     }
 
     .hero p {
-      color: #333;
+      color: #000000;
     }
 
     section {
       padding: 75px 24px;
+      background: #ffffff;
+      color: #000000;
     }
 
     .content {
@@ -77,32 +79,16 @@
     h2 {
       margin-bottom: 25px;
       font-size: 26px;
-    }
-
-    .dark-section {
-      background: #000;
-      color: #fff;
-    }
-
-    .light-section {
-      background: #fff;
-      color: #000;
+      color: #000000;
     }
 
     .card {
+      background: #ffffff;
+      color: #000000;
+      border: 1px solid #dddddd;
       border-radius: 14px;
       padding: 28px;
       margin-bottom: 20px;
-    }
-
-    .dark-section .card {
-      background: #161616;
-      border: 1px solid #444;
-    }
-
-    .light-section .card {
-      background: #f5f5f5;
-      border: 1px solid #ddd;
     }
 
     .skills {
@@ -112,26 +98,27 @@
     }
 
     .skills span {
-      background: #000;
-      color: #fff;
+      background: #ffffff;
+      color: #000000;
+      border: 1px solid #000000;
       padding: 8px 18px;
       border-radius: 20px;
     }
 
     #contact a {
-      color: #fff;
+      color: #000000;
     }
 
     #contact a:hover {
-      color: #aaa;
+      color: #555555;
     }
 
     footer {
       text-align: center;
       padding: 30px;
-      border-top: 1px solid #333;
-      background: #000;
-      color: #aaa;
+      border-top: 1px solid #dddddd;
+      background: #ffffff;
+      color: #000000;
     }
 
     @media (max-width: 600px) {
@@ -167,7 +154,7 @@
     <p>프로그래밍을 통해 새로운 아이디어를 구현하는 것을 좋아합니다.</p>
   </div>
 
-  <section id="about" class="dark-section">
+  <section id="about">
     <div class="content">
       <h2>About Me</h2>
       <div class="card">
@@ -178,7 +165,7 @@
     </div>
   </section>
 
-  <section id="skills" class="light-section">
+  <section id="skills">
     <div class="content">
       <h2>Skills</h2>
       <div class="skills">
@@ -191,7 +178,7 @@
     </div>
   </section>
 
-  <section id="contact" class="dark-section">
+  <section id="contact">
     <div class="content">
       <h2>Contact</h2>
       <div class="card">
