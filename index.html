@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>박건후 | Portfolio</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -22,6 +23,7 @@
       line-height: 1.7;
     }
 
+    /* 상단 메뉴 */
     header {
       padding: 20px 8%;
       display: flex;
@@ -45,6 +47,7 @@
       color: #cccccc;
     }
 
+    /* 메인 소개 */
     .hero {
       padding: 120px 8%;
       text-align: center;
@@ -65,6 +68,7 @@
       color: #000000;
     }
 
+    /* 공통 섹션 */
     section {
       padding: 75px 24px;
       background: #ffffff;
@@ -91,6 +95,7 @@
       margin-bottom: 20px;
     }
 
+    /* Skills */
     .skills {
       display: flex;
       gap: 12px;
@@ -103,20 +108,17 @@
       border: 1px solid #000000;
       padding: 8px 18px;
       border-radius: 20px;
+      transition: background-color 0.3s ease,
+                  color 0.3s ease;
+      cursor: default;
     }
 
-    
-.skills span {
-  transition: background-color 0.3s ease, color 0.3s ease;
-  cursor: default;
-}
+    .skills span:hover {
+      background: #000000;
+      color: #ffffff;
+    }
 
-.skills span:hover {
-  background: #000000;
-  color: #ffffff;
-}
-
-
+    /* Contact */
     #contact a {
       color: #000000;
     }
@@ -125,6 +127,79 @@
       color: #555555;
     }
 
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    /* GitHub 주소 복사 버튼 */
+    .copy-btn {
+      padding: 7px 15px;
+      background: #ffffff;
+      color: #000000;
+      border: 1px solid #000000;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease,
+                  color 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      background: #000000;
+      color: #ffffff;
+    }
+
+    /* 스크롤 애니메이션 */
+    @media (prefers-reduced-motion: no-preference) {
+      .js-reveal .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s ease,
+                    transform 0.8s ease;
+      }
+
+      .js-reveal .reveal.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* 맨 위로 이동 버튼 */
+    #topBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 48px;
+      height: 48px;
+      background: #14213d;
+      color: #ffffff;
+      border: none;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.3s ease,
+                  background-color 0.3s ease,
+                  visibility 0.3s ease;
+      z-index: 1000;
+    }
+
+    #topBtn.show {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    #topBtn:hover {
+      background: #000000;
+    }
+
+    /* 하단 영역 */
     footer {
       text-align: center;
       padding: 30px;
@@ -133,6 +208,7 @@
       color: #000000;
     }
 
+    /* 모바일 화면 */
     @media (max-width: 600px) {
       header {
         flex-direction: column;
@@ -146,13 +222,38 @@
       section {
         padding: 55px 20px;
       }
+
+      .contact-row {
+        align-items: flex-start;
+      }
+
+      #topBtn {
+        right: 20px;
+        bottom: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
+
 <body>
 
+  <!-- 상단 메뉴 -->
   <header>
     <strong>Park Gunhoo</strong>
+
     <nav>
       <a href="#about">Introduction</a>
       <a href="#skills">Skills</a>
@@ -160,15 +261,18 @@
     </nav>
   </header>
 
-  <div class="hero">
+  <!-- 메인 소개 -->
+  <div class="hero reveal">
     <h1>안녕하세요, <span>박건후</span>입니다.</h1>
     <p>Computer Science Student</p>
     <p>프로그래밍을 통해 새로운 아이디어를 구현하는 것을 좋아합니다.</p>
   </div>
 
-  <section id="about">
+  <!-- 자기소개 -->
+  <section id="about" class="reveal">
     <div class="content">
       <h2>About Me</h2>
+
       <div class="card">
         <p>안녕하세요! 한국외국어대학교에서 컴퓨터공학을 전공하고 있는 대학생 박건후입니다.</p>
         <p>프로그래밍과 컴퓨터 코딩에 관심이 있으며,
@@ -177,9 +281,11 @@
     </div>
   </section>
 
-  <section id="skills">
+  <!-- 기술 스택 -->
+  <section id="skills" class="reveal">
     <div class="content">
       <h2>Skills</h2>
+
       <div class="skills">
         <span>Python</span>
         <span>C</span>
@@ -190,22 +296,151 @@
     </div>
   </section>
 
-  <section id="contact">
+  <!-- 연락처 -->
+  <section id="contact" class="reveal">
     <div class="content">
       <h2>Contact</h2>
+
       <div class="card">
-        <p>GitHub:
-          <a href="https://github.com/ParkGunhoo0113">
+        <div class="contact-row">
+          <span>GitHub:</span>
+
+          <a
+            id="githubLink"
+            href="https://github.com/ParkGunhoo0113"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             github.com/ParkGunhoo0113
           </a>
-        </p>
+
+          <button
+            id="copyBtn"
+            class="copy-btn"
+            type="button"
+          >
+            복사
+          </button>
+        </div>
+
+        <span
+          id="copyStatus"
+          role="status"
+          aria-live="polite"
+          style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;"
+        ></span>
       </div>
     </div>
   </section>
 
+  <!-- 하단 -->
   <footer>
     © 2026 Gunhoo Park. All Rights Reserved.
   </footer>
+
+  <!-- 맨 위로 이동 버튼 -->
+  <button
+    id="topBtn"
+    type="button"
+    aria-label="맨 위로 이동"
+  >
+    ↑
+  </button>
+
+  <script>
+    // 스크롤 애니메이션
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      document.documentElement.classList.add("js-reveal");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.1
+        }
+      );
+
+      revealElements.forEach((element) => {
+        observer.observe(element);
+      });
+    }
+
+    // GitHub 주소 복사 기능
+    const copyBtn = document.getElementById("copyBtn");
+    const githubLink = document.getElementById("githubLink");
+    const copyStatus = document.getElementById("copyStatus");
+
+    let copyResetTimer;
+
+    copyBtn.addEventListener("click", async () => {
+      const githubURL = githubLink.href;
+
+      try {
+        await navigator.clipboard.writeText(githubURL);
+
+        copyBtn.textContent = "복사 완료!";
+        copyStatus.textContent = "GitHub 주소가 복사되었습니다.";
+
+        clearTimeout(copyResetTimer);
+
+        copyResetTimer = setTimeout(() => {
+          copyBtn.textContent = "복사";
+          copyStatus.textContent = "";
+        }, 2000);
+
+      } catch (error) {
+        copyBtn.textContent = "복사 실패";
+        copyStatus.textContent =
+          "주소를 복사할 수 없습니다. 링크를 직접 복사해 주세요.";
+
+        clearTimeout(copyResetTimer);
+
+        copyResetTimer = setTimeout(() => {
+          copyBtn.textContent = "복사";
+          copyStatus.textContent = "";
+        }, 2000);
+      }
+    });
+
+    // 맨 위로 이동 버튼
+    const topBtn = document.getElementById("topBtn");
+
+    function updateTopButton() {
+      if (window.scrollY > 200) {
+        topBtn.classList.add("show");
+      } else {
+        topBtn.classList.remove("show");
+      }
+    }
+
+    window.addEventListener(
+      "scroll",
+      updateTopButton,
+      { passive: true }
+    );
+
+    updateTopButton();
+
+    topBtn.addEventListener("click", () => {
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      window.scrollTo({
+        top: 0,
+        behavior: reduceMotion ? "instant" : "smooth"
+      });
+    });
+  </script>
 
 </body>
 </html>
